@@ -1,0 +1,27 @@
+name: Tech debt / Ops / Chore
+description: Refactor, cleanup, infra or data task. No new user-visible behaviour.
+labels: ["tech-debt"]
+projects: ["boxinnovate/1"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why now
+      description: Risk or cost of leaving it.
+  - type: textarea
+    id: risk
+    attributes:
+      label: Risk
+      description: What could break and how we check.
+  - type: textarea
+    id: done
+    attributes:
+      label: Done when
+      value: |
+        - [ ]

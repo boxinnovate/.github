@@ -1,0 +1,52 @@
+name: Feature / Epic
+description: New capability. Spans repos? Make it an Epic and add one sub-issue per repo.
+labels: ["enhancement"]
+projects: ["boxinnovate/1"]
+body:
+  - type: markdown
+    attributes:
+      value: "**No customer names, emails or personal data. Tenant / exam ids only.**"
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What can the user do after this ships? One or two sentences.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why
+      description: Who asked, what problem. Tenant ids only.
+  - type: textarea
+    id: repos
+    attributes:
+      label: Work per repo
+      value: |
+        - [ ] mockpro —
+        - [ ] ui-mockpro —
+  - type: input
+    id: flag
+    attributes:
+      label: Tenant flag key (rule 15)
+      description: "e.g. offlineSolutionsActive. OFF by default, toggle in tenant-feature-catalog.js."
+      placeholder: featureNameActive
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Done when
+      value: |
+        - [ ]
+    validations:
+      required: true
+  - type: input
+    id: plan
+    attributes:
+      label: Plan doc
+      placeholder: docs/plans/<d>-<mon>-<slug>.md
+  - type: textarea
+    id: out
+    attributes:
+      label: Out of scope

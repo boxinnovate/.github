@@ -1,0 +1,52 @@
+name: Production bug
+description: Code defect seen on acadwin.ai or minerva.academy (rule 16). Search open AND closed issues first.
+labels: ["bug", "prod-bug"]
+projects: ["boxinnovate/1"]
+body:
+  - type: markdown
+    attributes:
+      value: "**No customer names, emails or personal data. Tenant / exam ids only.** Seen on minerva.academy? The fixing PRs use `Refs`, never `Fixes`."
+  - type: dropdown
+    id: server
+    attributes:
+      label: Server
+      options: ["acadwin.ai", "minerva.academy", "both"]
+    validations:
+      required: true
+  - type: input
+    id: tenants
+    attributes:
+      label: Tenant IDs
+      placeholder: "e.g. 16, 25"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What the user sees. Observed vs expected table if useful.
+    validations:
+      required: true
+  - type: textarea
+    id: how
+    attributes:
+      label: How it happened
+      description: Confirmed steps from logs / DB, with dates.
+    validations:
+      required: true
+  - type: textarea
+    id: where
+    attributes:
+      label: Where
+      description: file:line per layer.
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes for the fix
+      description: Regression test, flag yes/no, scope check.
